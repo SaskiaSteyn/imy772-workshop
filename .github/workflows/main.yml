@@ -8,16 +8,16 @@ on:
 
 jobs:
     test:
-      runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
   
-      steps:
-        - uses: actions/checkout@v4
-  
-        - name: Use Node.js
-          uses: action/setup-node@v4
-  
-        - name: Intall Dependencies
-          run: npm ci
-  
-        - name: Run Test
-          run: npm test
+        steps:
+            - uses: actions/checkout@v4
+    
+            - name: Use Node.js
+              uses: action/setup-node@v4
+    
+            - name: Intall Dependencies
+              run: npm ci
+    
+            - name: Run Test
+              run: npm test
