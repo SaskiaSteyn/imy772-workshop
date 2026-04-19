@@ -1,2 +1,3 @@
 require('./sum-test.js');
-require('./addition.js');
+require('./addition-test.js');
+require('./multiplication-test.js');

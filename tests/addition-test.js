@@ -1,6 +1,6 @@
 const addition = require('./addition');
 
-describe('Addition function', () => {
+describe('Addition Function', () => {
 
     test('Adds 8 (hex) and 5 (hex) to equal 000D (hex)', () => {
         expect(addition('8', '5')).toBe('000D');
