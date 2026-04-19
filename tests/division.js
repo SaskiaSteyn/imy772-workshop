@@ -1,10 +1,12 @@
+const hexParser = require('./hexParser');
+
 function division(a, b) {
-    const valueA = parseInt(a, 16)
-    const valueB = parseInt(b, 16)
+    const decimalA = hexParser(a);
+    const decimalB = hexParser(b);
 
-    let result = valueA / valueB
+    let result = decimalA / decimalB;
 
-    if (valueB === 0) {
+    if (decimalB === 0) {
         return '0000'
     }
 

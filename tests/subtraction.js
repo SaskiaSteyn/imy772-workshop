@@ -1,8 +1,12 @@
-function subtraction(a, b) {
-    const valueA = parseInt(a, 16)
-    const valueB = parseInt(b, 16)
+const hexParser = require('./hexParser');
 
-    let result = valueA - valueB
+function subtraction(a, b) {
+    const decimalA = hexParser(a);
+    const decimalB = hexParser(b);
+
+    let result = decimalA - decimalB;
+
+    result = Math.round(result)
 
     if (result < 0) {
         result = 0

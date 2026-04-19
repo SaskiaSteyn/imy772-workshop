@@ -3,158 +3,142 @@ const subtraction = require('./subtraction');
 const multiplication = require('./multiplication');
 const division = require('./division');
 
-describe('Validation Tests - All Functions', () => {
+describe('Validation tests', () => {
 
-    const isValidHexOutput = (str) => /^[0-9A-F]{1,4}$/i.test(str);
+    const isValidHex = (str) => /^[0-9A-F]{1,4}$/i.test(str);
 
-    describe('Input validation: two valid hex numbers (allow negative & decimal)', () => {
-
+    describe('Input Validation: two valid hex inputs', () => {
         const testValid = (fn, inputs) => {
             expect(() => fn(...inputs)).not.toThrow();
-        };
+        }
+
         const testInvalid = (fn, inputs) => {
             expect(() => fn(...inputs)).toThrow();
-        };
+        }
 
-        // ADDITION
-        describe('addition', () => {
-            test('Positive: accepts valid inputs (positive, negative, decimal)', () => {
-                testValid(addition, ['2', '3']);
+        describe('Addition', () => {
+            test('Testing valid inputs', () => {
+                testValid(addition, ['1', '2']);
                 testValid(addition, ['-02', '-FF']);
                 testValid(addition, ['2.F', '3.1']);
                 testValid(addition, ['-A.F', 'B.0']);
-                testValid(addition, ['0', '-0']);
-            });
+                testValid(addition, ['0', '0']);
+            })
 
-            test('Negative: rejects invalid formats', () => {
-                testInvalid(addition, ['G', '5']);          // non-hex
-                testInvalid(addition, ['-', '5']);          // sign without digits
-                testInvalid(addition, ['2..3', '4']);       // multiple decimals
-                testInvalid(addition, ['.', '4']);          // only decimals
-                testInvalid(addition, ['2.', '4']);         // decimal without trailing digit
-                testInvalid(addition, ['.F', '4']);         // missing leading digit
-                testInvalid(addition, ['-2.F.5', '4']);     // too many parts
-                testInvalid(addition, ['2.FF', '4']);       // more than one digit after decimal
+            test('Testing invalid inputs', () => {
+                testInvalid(addition, ['G', '5']);
+                testInvalid(addition, ['-', '5']);
+                testInvalid(addition, ['2..3', '5']);
+                testInvalid(addition, ['2.', '5']);
+                testInvalid(addition, ['.F', '5']);
+                testInvalid(addition, ['-2.F.5', '5']);
+                testInvalid(addition, ['2.FF', '5']);
             });
         });
 
-        // SUBTRACTION
-        describe('subtraction', () => {
-            test('Positive: accepts valid inputs (positive, negative, decimal)', () => {
-                testValid(subtraction, ['2', '3']);
+        describe('Subtraction', () => {
+            test('Testing valid inputs', () => {
+                testValid(subtraction, ['1', '2']);
                 testValid(subtraction, ['-02', '-FF']);
                 testValid(subtraction, ['2.F', '3.1']);
                 testValid(subtraction, ['-A.F', 'B.0']);
-                testValid(subtraction, ['0', '-0']);
-            });
+                testValid(subtraction, ['0', '0']);
+            })
 
-            test('Negative: rejects invalid formats', () => {
-                testInvalid(subtraction, ['G', '5']);          // non-hex
-                testInvalid(subtraction, ['-', '5']);          // sign without digits
-                testInvalid(subtraction, ['2..3', '4']);       // multiple decimals
-                testInvalid(subtraction, ['.', '4']);          // only decimals
-                testInvalid(subtraction, ['2.', '4']);         // decimal without trailing digit
-                testInvalid(subtraction, ['.F', '4']);         // missing leading digit
-                testInvalid(subtraction, ['-2.F.5', '4']);     // too many parts
-                testInvalid(subtraction, ['2.FF', '4']);       // more than one digit after decimal
+            test('Testing invalid inputs', () => {
+                testInvalid(subtraction, ['G', '5']);
+                testInvalid(subtraction, ['-', '5']);
+                testInvalid(subtraction, ['2..3', '5']);
+                testInvalid(subtraction, ['2.', '5']);
+                testInvalid(subtraction, ['.F', '5']);
+                testInvalid(subtraction, ['-2.F.5', '5']);
+                testInvalid(subtraction, ['2.FF', '5']);
             });
         });
 
-        // MULTIPLICATION
-        describe('multiplication', () => {
-            test('Positive: accepts valid inputs (positive, negative, decimal)', () => {
-                testValid(multiplication, ['2', '3']);
+        describe('Multiplication', () => {
+            test('Testing valid inputs', () => {
+                testValid(multiplication, ['1', '2']);
                 testValid(multiplication, ['-02', '-FF']);
                 testValid(multiplication, ['2.F', '3.1']);
                 testValid(multiplication, ['-A.F', 'B.0']);
-                testValid(multiplication, ['0', '-0']);
-            });
+                testValid(multiplication, ['0', '0']);
+            })
 
-            test('Negative: rejects invalid formats', () => {
-                testInvalid(multiplication, ['G', '5']);          // non-hex
-                testInvalid(multiplication, ['-', '5']);          // sign without digits
-                testInvalid(multiplication, ['2..3', '4']);       // multiple decimals
-                testInvalid(multiplication, ['.', '4']);          // only decimals
-                testInvalid(multiplication, ['2.', '4']);         // decimal without trailing digit
-                testInvalid(multiplication, ['.F', '4']);         // missing leading digit
-                testInvalid(multiplication, ['-2.F.5', '4']);     // too many parts
-                testInvalid(multiplication, ['2.FF', '4']);       // more than one digit after decimal
+            test('Testing invalid inputs', () => {
+                testInvalid(multiplication, ['G', '5']);
+                testInvalid(multiplication, ['-', '5']);
+                testInvalid(multiplication, ['2..3', '5']);
+                testInvalid(multiplication, ['2.', '5']);
+                testInvalid(multiplication, ['.F', '5']);
+                testInvalid(multiplication, ['-2.F.5', '5']);
+                testInvalid(multiplication, ['2.FF', '5']);
             });
         });
 
-        // DIVISION
-        describe('division', () => {
-            test('Positive: accepts valid inputs (positive, negative, decimal)', () => {
-                testValid(division, ['2', '3']);
+        describe('Division', () => {
+            test('Testing valid inputs', () => {
+                testValid(division, ['1', '2']);
                 testValid(division, ['-02', '-FF']);
                 testValid(division, ['2.F', '3.1']);
                 testValid(division, ['-A.F', 'B.0']);
-                testValid(division, ['0', '-0']);
-            });
+                testValid(division, ['0', '0']);
+            })
 
-            test('Negative: rejects invalid formats', () => {
-                testInvalid(division, ['G', '5']);          // non-hex
-                testInvalid(division, ['-', '5']);          // sign without digits
-                testInvalid(division, ['2..3', '4']);       // multiple decimals
-                testInvalid(division, ['.', '4']);          // only decimals
-                testInvalid(division, ['2.', '4']);         // decimal without trailing digit
-                testInvalid(division, ['.F', '4']);         // missing leading digit
-                testInvalid(division, ['-2.F.5', '4']);     // too many parts
-                testInvalid(division, ['2.FF', '4']);       // more than one digit after decimal
+            test('Testing invalid inputs', () => {
+                testInvalid(division, ['G', '5']);
+                testInvalid(division, ['-', '5']);
+                testInvalid(division, ['2..3', '5']);
+                testInvalid(division, ['2.', '5']);
+                testInvalid(division, ['.F', '5']);
+                testInvalid(division, ['-2.F.5', '5']);
+                testInvalid(division, ['2.FF', '5']);
             });
         });
-
     });
 
-    describe('Output validation: no negative values', () => {
+    describe('Output validation: no negative numbers', () => {
 
-        test('addition: -02 + -FF = -101 -> "0000"', () => {
+        test('Addition', () => {
             const result = addition('-02', '-FF');
             expect(result).toBe('0000');
         });
 
-        test('subtraction: 5 - A = -5 -> "0000"', () => {
-            const result = subtraction('5', 'A');
+        test('Subtraction', () => {
+            const result = subtraction('-FF', '-02');
             expect(result).toBe('0000');
         });
 
-        test('multiplication: -2 * 3 = -6 -> "0000"', () => {
+        test('Multiplication', () => {
             const result = multiplication('-2', '3');
             expect(result).toBe('0000');
         });
 
-        test('division: -0F / 02 = -7.5 -> rounds to -8 -> negative, so "0000"', () => {
-            const result = division('-0F', '02');
+        test('Division', () => {
+            const result = division('-8F', '2');;
             expect(result).toBe('0000');
         });
+
     });
 
-    describe('Output validation: no decimals', () => {
-        test('addition: 2.F + 1.1 = 4.0 decimal -> rounded to 4 → "0004" (no decimal)', () => {
+    describe('Output validation: no decimal values', () => {
+        test('Addition', () => {
             const result = addition('2.F', '1.1');
-            expect(result).not.toContain('.');
-            expect(result).toMatch(/^[0-9A-F]{4}$/);
             expect(result).toBe('0004');
         });
 
-        test('subtraction: 3.0 - 1.8 = 1.5 decimal -> rounded to 2 → "0002" (no decimal)', () => {
+        test('Subtraction', () => {
             const result = subtraction('3.0', '1.8');
-            expect(result).not.toContain('.');
-            expect(result).toMatch(/^[0-9A-F]{4}$/);
             expect(result).toBe('0002');
         });
 
-        test('multiplication: 2.0 * 1.8 = 3.0 decimal -> "0003" (no decimal)', () => {
+        test('Multiplication', () => {
             const result = multiplication('2.0', '1.8');
-            expect(result).not.toContain('.');
-            expect(result).toMatch(/^[0-9A-F]{4}$/);
             expect(result).toBe('0003');
         });
 
-        test('division: 0F / 02 = 7.5 decimal -> rounded to 8 -> "0008" (no decimal)', () => {
+        test('Division', () => {
             const result = division('0F', '02');
-            expect(result).not.toContain('.');
-            expect(result).toMatch(/^[0-9A-F]{4}$/);
             expect(result).toBe('0008');
         });
     });

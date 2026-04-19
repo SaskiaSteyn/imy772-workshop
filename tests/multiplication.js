@@ -1,9 +1,17 @@
+const hexParser = require('./hexParser');
+
 function multiplication(a, b) {
 
-    const decimalA = parseInt(a, 16);
-    const decimalB = parseInt(b, 16);
+    const decimalA = hexParser(a);
+    const decimalB = hexParser(b);
 
-    const result = decimalA * decimalB;
+    let result = decimalA * decimalB;
+
+    result = Math.round(result)
+
+    if (result < 0) {
+        return '0000';
+    }
 
     return result.toString(16).toUpperCase().padStart(4, '0');
 };
