@@ -1,6 +1,6 @@
 function hexParser(hexString) {
 
-    const regex = /^-?[0-9A-F]{1,2}(\.[0-9A-F])?$/;
+    const regex = /^-?[0-9A-Fa-f]{1,2}(\.[0-9A-Fa-f])?$/;
 
     if (!regex.test((hexString))) {
         throw new Error('Invalid hexadecimal input');

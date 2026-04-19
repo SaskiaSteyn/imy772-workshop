@@ -5,7 +5,7 @@ const division = require('./division');
 
 describe('Validation tests', () => {
 
-    const isValidHex = (str) => /^[0-9A-F]{1,4}$/i.test(str);
+    const isValidHex = (str) => /^[0-9A-Fa-f]{1,4}$/i.test(str);
 
     describe('Input Validation: two valid hex inputs', () => {
         const testValid = (fn, inputs) => {
