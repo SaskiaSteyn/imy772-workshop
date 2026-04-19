@@ -1,1 +1,2 @@
-require('./sum-test.js');
+require('./sum-test.js')
+require('./division-test.js')
