@@ -1,4 +1,4 @@
-const hexParser = require('./hexParser');
+const hexParser = require('./hex-parser');
 
 function addition(a, b) {
 

@@ -1,4 +1,4 @@
-const hexParser = require('./hexParser');
+const hexParser = require('./hex-parser');
 
 function division(a, b) {
     const decimalA = hexParser(a);

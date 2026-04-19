@@ -1,4 +1,4 @@
-const hexParser = require('./hexParser');
+const hexParser = require('./hex-parser');
 
 function subtraction(a, b) {
     const decimalA = hexParser(a);
