@@ -1,4 +1,4 @@
-const subtraction = require('./subtraction')
+const subtraction = require('../operations/subtraction')
 
 describe('Subtraction Function', () => {
     test('subtract 10 (hex) from 5 (hex) to equal 000B', () => {
