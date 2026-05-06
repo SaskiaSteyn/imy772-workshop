@@ -1,10 +1,10 @@
-const hexParser = require('./hex-parser');
+const hexParser = require('../utils/hex-parser')
 
 function subtraction(a, b) {
-    const decimalA = hexParser(a);
-    const decimalB = hexParser(b);
+    const decimalA = hexParser(a)
+    const decimalB = hexParser(b)
 
-    let result = decimalA - decimalB;
+    let result = decimalA - decimalB
 
     result = Math.round(result)
 
