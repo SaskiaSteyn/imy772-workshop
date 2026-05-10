@@ -145,5 +145,5 @@ class HexCalculator {
 
 // Initialize calculator when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new HexCalculator()
+    window.calculator = new HexCalculator()
 })
