@@ -1,0 +1,13 @@
+{
+    "name": "imy722-frontend-tests",
+    "version": "1.0.0",
+    "description": "Frontend tests for IMY722 project",
+    "scripts": {
+        "cypress:open": "cypress open",
+        "cypress:run": "cypress run",
+        "test": "cypress run"
+    },
+    "devDependencies": {
+        "cypress": "^15.14.2"
+    }
+}

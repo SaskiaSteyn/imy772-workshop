@@ -1,4 +1,4 @@
-const hex_to_decimal = require('./hex-to-decimal')
+const hex_to_decimal = require('../utils/hex-to-decimal')
 
 describe('Hex to Decimal Function', () => {
     test('converts 0A (hex) to 10 (decimal)', () => {

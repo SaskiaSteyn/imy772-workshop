@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hexadecimal Calculator</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="calculator-container">
+            <h1>Hexadecimal Calculator</h1>
+
+            <div class="display">
+                <input
+                    type="text"
+                    id="firstNumber"
+                    class="display-input"
+                    placeholder="Enter first number (hex)"
+                    readonly
+                />
+                <span id="operation" class="operation-display"></span>
+                <input
+                    type="text"
+                    id="secondNumber"
+                    class="display-input"
+                    placeholder="Enter second number (hex)"
+                    readonly
+                />
+                <input
+                    type="text"
+                    id="result"
+                    class="display-input display-result"
+                    placeholder="Result"
+                    readonly
+                />
+            </div>
+
+            <div class="info">
+                <p id="decimalInfo" class="decimal-info"></p>
+            </div>
+
+            <div class="buttons-grid">
+                <!-- Number buttons (0-9, A-F) -->
+                <button class="btn btn-number" data-value="0">0</button>
+                <button class="btn btn-number" data-value="1">1</button>
+                <button class="btn btn-number" data-value="2">2</button>
+                <button class="btn btn-number" data-value="3">3</button>
+                <button class="btn btn-number" data-value="4">4</button>
+                <button class="btn btn-number" data-value="5">5</button>
+                <button class="btn btn-number" data-value="6">6</button>
+                <button class="btn btn-number" data-value="7">7</button>
+                <button class="btn btn-number" data-value="8">8</button>
+                <button class="btn btn-number" data-value="9">9</button>
+                <button class="btn btn-number" data-value="A">A</button>
+                <button class="btn btn-number" data-value="B">B</button>
+                <button class="btn btn-number" data-value="C">C</button>
+                <button class="btn btn-number" data-value="D">D</button>
+                <button class="btn btn-number" data-value="E">E</button>
+                <button class="btn btn-number" data-value="F">F</button>
+
+                <!-- Operation buttons -->
+                <button class="btn btn-operation" data-operation="add">
+                    +
+                </button>
+                <button class="btn btn-operation" data-operation="subtract">
+                    −
+                </button>
+                <button class="btn btn-operation" data-operation="multiply">
+                    ×
+                </button>
+                <button class="btn btn-operation" data-operation="divide">
+                    ÷
+                </button>
+
+                <!-- Control buttons -->
+                <button class="btn btn-control" id="clearBtn">Clear</button>
+                <button class="btn btn-control" id="deleteBtn">Delete</button>
+                <button class="btn btn-equals" id="equalsBtn">=</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "test": "jest",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "jest": "^30.3.0"
+    }
+}

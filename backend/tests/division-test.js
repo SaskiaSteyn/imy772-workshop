@@ -1,4 +1,4 @@
-const division = require('./division')
+const division = require('../operations/division')
 
 describe('Division Function', () => {
     test('divides 10 (hex) by 02 (hex) to equal 0008 (hex)', () => {
